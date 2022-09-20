@@ -23,14 +23,14 @@
     <title>TheHunt - Bootstrap HTML5 Job Portal Template</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/line-icons.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.css">
-    <link rel="stylesheet" href="assets/css/slicknav.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/line-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/slicknav.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 
 
     <!-- Scripts -->
@@ -53,7 +53,7 @@
                             <span class="lni-menu"></span>
                             <span class="lni-menu"></span>
                         </button>
-                        <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
+                        <a href="index.html" class="navbar-brand"><img src="public/assets/img/logo.png" alt=""></a>
                     </div>
                     <div class="collapse navbar-collapse" id="main-navbar">
                         <ul class="navbar-nav mr-auto w-100 justify-content-end">
@@ -62,8 +62,8 @@
                                     Home
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="index.html">Home 1</a></li>
-                                    <li><a class="dropdown-item" href="index-2.html">Home 2</a></li>
+                                    <li><a class="dropdown-item" href="{{route('welcome')}}">Home 1</a></li>
+{{--                                    <li><a class="dropdown-item" href="index-2.html">Home 2</a></li>--}}
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -88,7 +88,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="browse-jobs.html">Browse Jobs</a></li>
                                     <li><a class="dropdown-item" href="browse-categories.html">Browse Categories</a></li>
-                                    <li><a class="dropdown-item" href="add-resume.html">Add Resume</a></li>
+                                    <li><a class="dropdown-item" href="{{route('addresume')}}">Add Resume</a></li>
                                     <li><a class="dropdown-item" href="manage-resumes.html">Manage Resumes</a></li>
                                     <li><a class="dropdown-item" href="job-alerts.html">Job Alerts</a></li>
                                 </ul>
@@ -109,10 +109,10 @@
                                     Blog
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="blog.html">Blog - Right Sidebar</a></li>
-                                    <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                                    <li><a class="dropdown-item" href="blog-full-width.html"> Blog full width</a></li>
-                                    <li><a class="dropdown-item" href="single-post.html">Blog Single Post</a></li>
+                                    <li><a class="dropdown-item" href="{{route('blog')}}">Blog</a></li>
+{{--                                    <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="blog-full-width.html"> Blog full width</a></li>--}}
+{{--                                    <li><a class="dropdown-item" href="single-post.html">Blog Single Post</a></li>--}}
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -138,6 +138,7 @@
             </li>
         @endif
     @else
+
         <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }}
@@ -153,8 +154,25 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
+
+
+
+                <a class="dropdown-item" href="{{ route('resume', ['id'=>1]) }}
+                   ">
+                    {{ __('Account') }}
+                </a>
+
+{{--                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
+{{--                    @csrf--}}
+{{--                </form>--}}
             </div>
+
         </li>
+
+
+
+
+
     @endguest
 
                             <li class="button-group">
@@ -261,17 +279,17 @@
 </div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src="assets/js/jquery-min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/color-switcher.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/jquery.slicknav.js"></script>
-<script src="assets/js/jquery.counterup.min.js"></script>
-<script src="assets/js/waypoints.min.js"></script>
-<script src="assets/js/form-validator.min.js"></script>
-<script src="assets/js/contact-form-script.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="{{asset('assets/js/jquery-min.js')}}"></script>
+<script src="{{asset('assets/js/popper.min.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/js/color-switcher.js')}}"></script>
+<script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.slicknav.js')}}"></script>
+<script src="{{asset('assets/js/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('assets/js/waypoints.min.js')}}"></script>
+<script src="{{asset('assets/js/form-validator.min.js')}}"></script>
+<script src="{{asset('assets/js/contact-form-script.js')}}"></script>
+<script src="{{asset('assets/js/main.js')}}"></script>
 
 </body>
 </html>

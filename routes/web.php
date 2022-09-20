@@ -15,9 +15,43 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('mypage', [\App\Http\Controllers\MyController::class, 'myPage']);
+})->name('welcome');
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/*
+|--------------------------------------------------------------------------
+| Routes candidates
+|--------------------------------------------------------------------------
+*/
+
+Route::get('add-resume',[\App\Http\Controllers\Candidates\CandidatesController::class, 'addresume'])
+    ->name('addresume');
+
+Route::post('//',[\App\Http\Controllers\Candidates\CandidatesController::class, 'store'])
+    ->name('resume.add-resume');
+/*
+|--------------------------------------------------------------------------
+| Routes blog
+|--------------------------------------------------------------------------
+*/
+
+Route::get('blog',[\App\Http\Controllers\Blog\BlogController::class, 'blog'])
+    ->name('blog');
+
+/*
+|--------------------------------------------------------------------------
+| Account
+|--------------------------------------------------------------------------
+*/
+
+Route::get('account/{id}/resume',[\App\Http\Controllers\Account\AccountController::class, 'resume'])
+    ->name('resume');
+
+Route::get('account',[\App\Http\Controllers\Account\AccountController::class, 'account'])
+    ->name('account');
+
+Route::get('account/notifications',[\App\Http\Controllers\Account\AccountController::class, 'notifications'])
+    ->name('notifications');
+
