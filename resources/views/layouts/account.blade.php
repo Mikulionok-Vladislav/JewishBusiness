@@ -31,12 +31,12 @@
                             <li><a
                                     {{--                                    class="active"--}}
                                     href="{{route('resume', ['id'=>1])}}">My Resume</a></li>
-                            <li><a href="bookmarked.blade.php">Bookmarked Jobs</a></li>
+                            <li><a style="color:red" href="bookmarked.blade.php">Bookmarked Jobs</a></li>
                             <li><a href="{{route('notifications')}}">Notifications <span class="notinumber">2</span></a></li>
-                            <li><a href="manage-applications.blade.php">Manage Applications</a></li>
-                            <li><a href="job-alerts.blade.php">Job Alerts</a></li>
-                            <li><a href="change-password.blade.php">Change Password</a></li>
-                            <li><a href="index.html">Sing Out</a></li>
+                            <li><a style="color:red" href="manage-applications.blade.php">Manage Applications</a></li>
+                            <li><a style="color:red" href="job-alerts.blade.php">Job Alerts</a></li>
+                            <li><a style="color:red" href="change-password.blade.php">Change Password</a></li>
+                            <li><a style="color:red" href="index.html">Sing Out</a></li>
                         </ul>
 
                         {{--                        @endforeach--}}

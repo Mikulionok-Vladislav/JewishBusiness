@@ -31,6 +31,9 @@ Route::get('add-resume',[\App\Http\Controllers\Candidates\CandidatesController::
 
 Route::post('//',[\App\Http\Controllers\Candidates\CandidatesController::class, 'store'])
     ->name('resume.add-resume');
+
+Route::get('browsejob',[\App\Http\Controllers\Candidates\CandidatesController::class,'browseJob'])
+    ->name('browsejob');
 /*
 |--------------------------------------------------------------------------
 | Routes blog
@@ -54,4 +57,5 @@ Route::get('account',[\App\Http\Controllers\Account\AccountController::class, 'a
 
 Route::get('account/notifications',[\App\Http\Controllers\Account\AccountController::class, 'notifications'])
     ->name('notifications');
+
 

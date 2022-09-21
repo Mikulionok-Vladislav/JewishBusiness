@@ -30,6 +30,7 @@
 
                         <form class="form-ad" action="{{route('resume.add-resume')}}" method="POST" enctype="multipart/form-data">
                             @csrf
+
                             <h3>Basic information</h3>
 
                             <div class="form-group">

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Resume extends Model
 {
     protected $table = 'resumes';
-    protected $fillable = ['name', 'email', 'profession_title', 'location', 'web', 'pre_hour', 'age'];
+    protected $fillable = ['id','name', 'email', 'profession_title', 'location', 'web', 'pre_hour', 'age'];
     use HasFactory;
 }
